@@ -23,7 +23,7 @@ seed: 1113
 
 trainer:
   accelerator: gpu
-  devices: 8
+  devices: 1
   num_nodes: 1
   accumulate_grad_batches: ${div_up:${train.global_batch_size}, ${eval:${trainer.devices} * ${datamodule.batch_size} * ${trainer.num_nodes}}}
   max_epochs: 100
